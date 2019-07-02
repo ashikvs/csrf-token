@@ -57,6 +57,7 @@ name: "AboutContainer",
             this.subs.sink= getService.getHlmUsers(this.baseUrl)
                 .subscribe(
                     next => {
+                        debugger
                         this.users = next.response.hlm_users
                     },
                     error => {

@@ -8,9 +8,19 @@ import {of} from 'rxjs';
 export default {
 
     getHlmUsers(baseurl) {
-        debugger
-        const users = ajax({
+        const Hlmusers = ajax({
             url:baseurl+'/hlm-users.json',
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        return Hlmusers;
+    },
+
+    getUser(baseurl) {
+        const users = ajax({
+            url:baseurl,
             method: 'GET',
             headers: {
                 'Accept': 'application/json'
