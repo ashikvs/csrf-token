@@ -14,7 +14,7 @@ export default {
         }
     },
      created() {
-        this.getToken()
+        console.log(this.getToken())
     },
     
   destroyed() {
@@ -23,6 +23,7 @@ export default {
    methods: {
        getToken(){
            //gettoken
+           return this.$store.getters.getCsrfToken
        }
    }
 }

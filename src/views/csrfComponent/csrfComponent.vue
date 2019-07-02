@@ -8,20 +8,23 @@
 </template>
 
 <script>
+import {mapMutations} from 'vuex'
 export default {
 
-   methods: {
-       getCall(){
-           //gettoken
-           console.log('get');
-           
-       },
-       postCall(){
-           //posttoken
-           console.log('post');
-           
-       }
-       }
+    methods: {
+       
+        getCall() {
+            //gettoken
+            console.log('get call');
+            console.log(this.$store.getters.getCsrfToken)
+        
+        },
+        postCall() {
+            //posttoken
+            console.log('post');
+
+        }
+    }
 }
 </script>
 

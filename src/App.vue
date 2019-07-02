@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-       <v-btn class="info" @click="$router.push('/')">Home</v-btn> |
+       <v-btn class="info" ripple @click="$router.push('/')">Home</v-btn> |
       <v-btn class="info" @click="$router.push('/about')"  >About</v-btn> |
       <v-btn class="info" @click="$router.push('/csrf')" >Api calls</v-btn> 
       <v-app>
@@ -11,6 +11,27 @@
     
   </div>
 </template>
+
+<script>
+import {mapMutations} from 'vuex'
+
+export default {
+  created() {
+    this.getToken()
+  },
+   methods: {
+      ...mapMutations([
+            'setCsrfToken'
+        ]),
+     getToken(){
+       //get token from server and set it in store
+        this.$store.commit('setCsrfToken', 'change-token')
+
+     }
+   }
+}
+</script>
+
 
 <style lang="scss">
 #app {
