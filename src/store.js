@@ -5,7 +5,9 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    csrftoken:'test-token'
+    csrftoken:'test-token',
+    accessToken:false,
+    csrfaccessToken:true
   },
   mutations: {
     setCsrfToken (state, token) {

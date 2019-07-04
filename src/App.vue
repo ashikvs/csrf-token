@@ -3,6 +3,7 @@
     <div id="nav">
        <v-btn class="info" ripple @click="$router.push('/')">Home</v-btn> |
       <v-btn class="info" @click="$router.push('/about')"  >About</v-btn> |
+      <router-link to="/about">aboutt</router-link>
       <v-btn class="info" @click="$router.push('/csrf')" >Api calls</v-btn> 
       <v-app>
           <router-view/>
@@ -50,7 +51,6 @@ export default {
                 .subscribe(
                     next => {
                         //this.users = next.token;
-                        debugger 
                         console.log(next)
                         this.$store.commit('setCsrfToken', next.response.user[0].token)
                     },
