@@ -5,21 +5,24 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    csrftoken:'test-token',
     accessToken:false,
-    csrfaccessToken:true
   },
   mutations: {
-    setCsrfToken (state, token) {
-      state.csrftoken = token
+    setaccessToken (state, token) {
+      state.accessToken = token
     }
   },
   getters:{
-    getCsrfToken: state => {
-      return state.csrftoken
+    getacessToken: state => {
+      return state.accessToken
     }
   },
   actions: {
+    setacessToken({commit},tokenflag) {
+      debugger
+      // console.log("ORGID IN THE STORE", orgid);
+       commit('setaccessToken', tokenflag);
+   },
 
   }
 })

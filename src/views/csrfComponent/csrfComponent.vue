@@ -16,7 +16,7 @@ export default {
         getCall() {
             //gettoken
             console.log('get call');
-            console.log(this.$store.getters.getCsrfToken)
+         
         
         },
         postCall() {

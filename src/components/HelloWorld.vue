@@ -1,14 +1,24 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <v-btn @click="setacessToken(true)">enable access</v-btn>
+    <v-btn @click="setacessToken(false)">disable access</v-btn>
+
   </div>
 </template>
 
 <script>
+import {mapActions} from 'vuex'
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods:{
+     ...mapActions([
+      'setacessToken'
+      ])
   }
 }
 </script>
